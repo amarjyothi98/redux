@@ -11,9 +11,10 @@ export const userSlice = createSlice({
             //action.payload = {name, email} 
             state.name = action.payload.name;
             state.anything = action.payload.anything;
-        }
+        },
+        remove: (state) => (state = {}),
     }
 })
 
-export const { update } = userSlice.actions;
+export const { update, remove } = userSlice.actions;
 export default userSlice.reducer;

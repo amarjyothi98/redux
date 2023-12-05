@@ -1,9 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { remove } from '../redux/userSlice';
 
 const Component3 = () => {
 
   const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const handleRemove = () => {
+    dispatch(remove());
+  };  
 
   return (
     <div>
@@ -11,6 +16,8 @@ const Component3 = () => {
 
       <p>here also {user.name}</p>
       <p>kuch bhi hehe: {user.anything}</p>
+
+      <button onClick={handleRemove}>clear everything</button>
     </div>
   )
 }
